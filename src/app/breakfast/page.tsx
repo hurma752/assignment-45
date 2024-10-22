@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import blogImage from "@/app/breakfast.jpg"; // Adjust path if necessary
+import blogImage from "@/app/breakfast.jpg"; 
 
 export default function Breakfast() {
   return (

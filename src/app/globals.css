@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* General Background and Header */
 header {
-  background-color: #f3de2c; /* Light cream for a clean and neutral backdrop */
+  background-color: #f3de2c;
 }
 
-/* Header Image Section */
 .header-image {
   position: relative;
   height: 250px;
@@ -30,9 +27,10 @@ header {
   top: 30%;
   left: 30%;
   transform: translate(-50%, -50%);
-  color: #5c8001; 
+  color: #5c8001;
   font-size: 90px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1s ease-out;
 }
 
 .header-image h3 {
@@ -41,7 +39,7 @@ header {
   top: 57%;
   left: 40%;
   transform: translate(-50%, -50%);
-  color: #fb6107; 
+  color: #fb6107;
   font-size: 50px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -52,14 +50,13 @@ header {
   top: 70%;
   left: 40%;
   transform: translate(-50%, -50%);
-  color: #666666; /* Subtle gray for less emphasis */
+  color: #666666;
   font-size: 20px;
   margin-top: 20px;
 }
 
-/* Navigation Bar */
 nav {
-  background-color: #5c8001; 
+  background-color: #5c8001;
   text-align: center;
   padding: 10px 0;
 }
@@ -77,18 +74,18 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #FFFFFF; /* White for high contrast and readability */
+  color: #FFFFFF;
   font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #fbb02d;; 
+  color: #fbb02d;
 }
 
-/* Blog Section */
 .blog-cards-container {
   padding: 50px;
-  background-color: #F5F5F5; /* Soft background color to ensure focus on content */
+  background-color: #F5F5F5;
 }
 
 .blog-cards {
@@ -96,7 +93,6 @@ nav ul li a:hover {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
-  
 }
 
 .blog-card {
@@ -104,12 +100,13 @@ nav ul li a:hover {
   height: auto;
   padding: 20px;
   border-radius: 10px;
-  background-color: #FFFFFF; 
+  background-color: #FFFFFF;
   border: 2px solid #7cb518;
   width: calc(33.33% - 20px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .blog-card:hover {
@@ -131,17 +128,17 @@ nav ul li a:hover {
 .blog-title {
   font-size: 1.5rem;
   margin-bottom: 5px;
-  color: #5c8001;; /* Dark charcoal for readability */
+  color: #5c8001;
 }
 
 .blog-description {
   font-size: 1rem;
   margin-bottom: 10px;
-  color: #666666;; /* Softer gray for description text */
+  color: #666666;
 }
 
 .read-more-button {
-  background-color: #fb6107; 
+  background-color: #fb6107;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -152,10 +149,9 @@ nav ul li a:hover {
 }
 
 .read-more-button:hover {
-  background-color: #fbb02d;; 
+  background-color: #fbb02d;
 }
 
-/* Keyframe for fading in */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -167,250 +163,207 @@ nav ul li a:hover {
   }
 }
 
-.blog-card {
-  animation: fadeIn 1s ease-in-out; /* Apply fade-in animation */
-}
-
-
 @keyframes slideIn {
   from {
     transform: translateX(-40%);
     opacity: 0;
   }
   to {
-    transform: translateX(100);
+    transform: translateX(0);
     opacity: 1;
   }
 }
 
-.header-image h1 {
-  animation: slideIn 1s ease-out; /* Slide in the header text */
-}
-
-nav ul li a {
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #fbb02d; /* Warm Gold for hover effect */
-}
-
 .footer {
-  background-color: #5c8001; /* Rich green for a fresh and modern feel */
-  color: white; /* Text color for high contrast */
-  padding: 40px 20px; /* Top and bottom padding */
-  text-align: center; /* Centered text for smaller screens */
+  background-color: #5c8001;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .footer-content {
-  display: flex; /* Flex layout for sections */
-  justify-content: space-between; /* Space between sections */
-  flex-wrap: wrap; /* Wraps the sections on smaller screens */
-  margin-bottom: 20px; /* Space between content and bottom */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .footer-section {
-  flex: 1; /* Each section takes equal space */
-  margin: 10px; /* Space between sections */
+  flex: 1;
+  margin: 10px;
 }
 
 .footer-section h3 {
-  margin-bottom: 10px; /* Space between title and content */
-  color: #fbb02d; /* Warm yellow for section titles */
-  font-size: 1.5rem; /* Increased font size for section titles */
+  margin-bottom: 10px;
+  color: #fbb02d;
+  font-size: 1.5rem;
 }
 
 .footer-section p,
 .footer-section ul {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  font-size: 1.1rem; /* Increased font size for paragraph text */
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
 }
 
 .footer-section ul {
-  list-style: none; /* Remove bullet points */
+  list-style: none;
 }
 
 .footer-section ul li {
-  margin: 5px 0; /* Space between list items */
+  margin: 5px 0;
 }
 
 .footer-section ul li a {
-  color: #f3de2c; /* Soft yellow for links */
-  text-decoration: none; /* Remove underline */
-  font-size: 1.1rem; /* Increased font size for links */
+  color: #f3de2c;
+  text-decoration: none;
+  font-size: 1.1rem;
 }
 
 .footer-section ul li a:hover {
-  text-decoration: underline; /* Underline on hover */
-  color: #fb6107; /* Bright orange for hover effect */
+  text-decoration: underline;
+  color: #fb6107;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Light border at the top */
-  padding-top: 20px; /* Space above text */
-  font-size: 1rem; /* Increased font size for footer bottom text */
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 20px;
+  font-size: 1rem;
 }
 
-/* Styles for tablets and smaller devices */
 @media (max-width: 768px) {
   .header-image h1 {
-    font-size: 50px; /* Reduce font size for smaller screens */
-    top: 20%; /* Adjust position */
+    font-size: 50px;
+    top: 20%;
   }
 
   .header-image h3 {
-    font-size: 30px; /* Reduce font size for smaller screens */
-    top: 45%; /* Adjust position */
+    font-size: 30px;
+    top: 45%;
   }
 
   nav ul li {
-    margin-right: 50px; /* Reduce margin for smaller screens */
+    margin-right: 50px;
   }
 
   .blog-card {
-    width: calc(50% - 20px); /* Adjust card width for smaller screens */
+    width: calc(50% - 20px);
   }
 
   .footer-content {
-    flex-direction: column; /* Stack footer sections vertically */
-    align-items: center; /* Center content */
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-section {
-    margin: 20px 0; /* Space between stacked sections */
+    margin: 20px 0;
   }
 }
 
-/* Styles for mobile devices */
 @media (max-width: 480px) {
   .header-image h1 {
-    font-size: 40px; /* Further reduce font size for mobile */
+    font-size: 40px;
   }
 
   .header-image h3 {
-    font-size: 24px; /* Further reduce font size for mobile */
+    font-size: 24px;
   }
 
   nav ul li {
-    margin-right: 20px; /* Reduce margin for mobile */
+    margin-right: 20px;
   }
 
   .blog-card {
-    width: 100%; /* Full width for blog cards */
+    width: 100%;
   }
 
   .footer-section {
-    flex: 1 1 100%; /* Make sections full width on mobile */
+    flex: 1 1 100%;
   }
 }
 
-@media (max-width: 768px) {
-  .header-image {
-    height: 200px; /* Adjust height for smaller screens */
-  }
-
-  .header-image img {
-    width: 100%; /* Ensure image takes full width */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  .blog-card {
-    width: calc(100% - 20px); /* Stack cards on smaller screens */
-  }
-
-  .footer-section {
-    flex: 1 1 100%; /* Stack footer sections */
-    margin: 10px 0; /* Add margin for spacing */
-  }
-}
-/* Styles for the Blog Page */
 .blog-page {
-  padding: 20px; /* Add padding around the page */
-  background-color: #F5F5F5; /* Light background for the blog page */
-  border-radius: 10px; /* Rounded corners */
-  max-width: 800px; /* Max width to keep content centered */
-  margin: 20px auto; /* Center the blog page */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog Post Title */
 .blog-page-title {
-  font-size: 2.5rem; /* Larger font size for the title */
-  color: #5c8001; /* Dark green color */
-  margin-bottom: 15px; /* Space below the title */
-  text-align: center; /* Center the title */
+  font-size: 2.5rem;
+  color: #5c8001;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-/* Blog Image */
-.blog-images { /* Corrected from .blog-images to .blog-image */
-  width: 100%; /* Full width */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Rounded corners */
-  margin-bottom: 15px; /* Space below the image */
+.blog-images {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-/* Blog Content */
 .blog-content {
-  font-size: 1.2rem; /* Slightly larger font for readability */
-  color: #666666; /* Soft gray for the content */
-  line-height: 1.6; /* Increase line height for better readability */
-  margin-bottom: 20px; /* Space below the content */
+  font-size: 1.2rem;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-/* Back Button */
 .back-button {
-  display: inline-block; /* Display as inline block for padding */
-  background-color: #fb6107; /* Button color */
-  color: white; /* Text color */
-  padding: 10px 20px; /* Padding for button */
-  border-radius: 5px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  text-align: center; /* Center text */
-  transition: background-color 0.3s ease; /* Smooth background color transition */
+  display: inline-block;
+  background-color: #fb6107;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .back-button:hover {
-  background-color: #fbb02d; /* Change color on hover */
+  background-color: #fbb02d;
 }
 
-/* Media Queries for Responsiveness */
-
-/* For devices with a max width of 768px (tablets and smaller screens) */
 @media (max-width: 768px) {
   .blog-page {
-    padding: 15px; /* Reduce padding */
+    padding: 15px;
   }
 
   .blog-page-title {
-    font-size: 2rem; /* Slightly smaller title font size */
+    font-size: 2rem;
   }
 
   .blog-content {
-    font-size: 1.1rem; /* Slightly smaller content font size */
+    font-size: 1.1rem;
   }
 
   .back-button {
-    padding: 8px 16px; /* Adjust button padding */
+    padding: 8px 16px;
   }
 }
 
-/* For devices with a max width of 480px (mobile phones) */
 @media (max-width: 480px) {
   .blog-page {
-    padding: 10px; /* Further reduce padding */
+    padding: 10px;
   }
 
   .blog-page-title {
-    font-size: 1.8rem; /* Smaller title font size */
+    font-size: 1.8rem;
   }
 
   .blog-content {
-    font-size: 1rem; /* Smaller content font size */
+    font-size: 1rem;
   }
 
   .back-button {
-    padding: 6px 12px; /* Further adjust button padding */
+    padding: 6px 12px;
   }
-}  
+}
+
 

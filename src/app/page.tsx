@@ -13,42 +13,42 @@ const blogs = [
         title: "Healthy Breakfast Ideas",
         description: "Start your day with energy by trying out these top healthy breakfast ideas.",
         image: blog1, 
-        link: '/breakfast', // Correctly pointing to the breakfast page
+        link: '/breakfast',
     },
     {
         id: 2,
         title: "Delicious Lunch Recipes",
         description: "Discover some of the best healthy lunch recipes to fuel your day.",
         image: blog2,
-        link: '/lunch', // Correct link to the lunch page
+        link: '/lunch',
     },
     {
         id: 3,
         title: "Top Fruits for Health",
         description: "Learn about the most nutritious fruits that can benefit your health.",
         image: blog3,
-        link: '/fruits', // Correct link to the fruits page
+        link: '/fruits',
     },
     {
         id: 4,
         title: "Healthy Dinner Options",
         description: "End your day on a healthy note with these nutritious dinner recipes.",
         image: blog4,
-        link: '/dinner', // Correct link to the dinner page
+        link: '/dinner',
     },
     {
         id: 5,
         title: "Smoothie Recipes for Health",
         description: "Try these tasty and healthy smoothies for a nutritious boost.",
         image: blog5,
-        link: '/smoothie', // Correct link to the smoothie page
+        link: '/smoothie',
     },
     {
         id: 6,
         title: "Top Vegan Recipes",
         description: "Explore some of the best plant-based recipes for a healthy lifestyle.",
         image: blog6,
-        link: '/vegan', // Correct link to the vegan page
+        link: '/vegan',
     }
 ];
 
