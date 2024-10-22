@@ -1,101 +1,82 @@
-import Image from "next/image";
+import Image from 'next/image';
+import blog1 from "@/app/breakfast.jpg"; 
+import blog2 from "@/app/lunch.jpg";
+import blog3 from "@/app/fruits.jpg";
+import blog4 from "@/app/dinner.jpg";
+import blog5 from "@/app/smoothie.jpg";
+import blog6 from "@/app/vegan.jpg";
+import Link from 'next/link';
+
+const blogs = [
+    {
+        id: 1,
+        title: "Healthy Breakfast Ideas",
+        description: "Start your day with energy by trying out these top healthy breakfast ideas.",
+        image: blog1, 
+        link: '/breakfast', // Correctly pointing to the breakfast page
+    },
+    {
+        id: 2,
+        title: "Delicious Lunch Recipes",
+        description: "Discover some of the best healthy lunch recipes to fuel your day.",
+        image: blog2,
+        link: '/lunch', // Correct link to the lunch page
+    },
+    {
+        id: 3,
+        title: "Top Fruits for Health",
+        description: "Learn about the most nutritious fruits that can benefit your health.",
+        image: blog3,
+        link: '/fruits', // Correct link to the fruits page
+    },
+    {
+        id: 4,
+        title: "Healthy Dinner Options",
+        description: "End your day on a healthy note with these nutritious dinner recipes.",
+        image: blog4,
+        link: '/dinner', // Correct link to the dinner page
+    },
+    {
+        id: 5,
+        title: "Smoothie Recipes for Health",
+        description: "Try these tasty and healthy smoothies for a nutritious boost.",
+        image: blog5,
+        link: '/smoothie', // Correct link to the smoothie page
+    },
+    {
+        id: 6,
+        title: "Top Vegan Recipes",
+        description: "Explore some of the best plant-based recipes for a healthy lifestyle.",
+        image: blog6,
+        link: '/vegan', // Correct link to the vegan page
+    }
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <section className="blog-cards-container">
+        <div className="blog-cards">
+          {blogs.map((blog) => (
+            <div key={blog.id} className="blog-card">
+              <Image 
+                src={blog.image} 
+                alt={blog.title} 
+                className="blog-image"
+                width={500}  
+                height={300} 
+              />
+              <div className="blog-card-content">
+                <h3 className="blog-title">{blog.title}</h3>
+                <p className="blog-description">{blog.description}</p>
+                <Link href={blog.link}>
+                  <button className="read-more-button">Read More</button>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }
