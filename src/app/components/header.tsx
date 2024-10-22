@@ -7,11 +7,8 @@ export default function Header() {
     <div>
       <header>
         <div className="header-image">
-          <Image
-            src={Image1}
-            alt="Healthy Life Stylers"
-          />
-          <div>
+          <Image src={Image1} alt="Healthy Life Stylers" />
+          <div className="text-content">
             <h1>Healthy</h1>
             <h3>Lifestylers</h3>
             <p className="headcontent">
